@@ -8,7 +8,7 @@
 ### Installation
 
 #### from our release 
-You can download dmg installer from the [releases](https://github.com/poor-branson/N-Clip-Board/releases)
+You can download dmg installer from the [releases](https://github.com/N-Clipboard/N-Clipboard/releases)
 
 #### compile from source
 
