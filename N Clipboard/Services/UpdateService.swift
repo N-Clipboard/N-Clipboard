@@ -88,7 +88,7 @@ class NCUpdateService: NSObject, NSWindowDelegate {
         let shortVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
         
-        return "\(shortVersion)-build.\(bundleVersion)"
+        return "v\(shortVersion)-build.\(bundleVersion)"
     }
     
     func windowWillClose(_ notification: Notification) {
