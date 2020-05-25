@@ -1,0 +1,46 @@
+PODS:
+  - Down (0.9.2)
+  - HotKey (0.1.2)
+  - MASShortcut (2.4.0)
+  - Preferences (1.0.1)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
+  - SwiftHEXColors (1.4.0)
+  - SwiftyBeaver (1.9.1)
+
+DEPENDENCIES:
+  - Down
+  - HotKey
+  - MASShortcut
+  - Preferences
+  - RealmSwift
+  - SwiftHEXColors
+  - SwiftyBeaver
+
+SPEC REPOS:
+  trunk:
+    - Down
+    - HotKey
+    - MASShortcut
+    - Preferences
+    - Realm
+    - RealmSwift
+    - SwiftHEXColors
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  Down: 1f6a14846dff45ae8e7e4334b4e386a5fd3b2412
+  HotKey: ad59450195936c10992438c4210f673de5aee43e
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+  Preferences: a5afbe0ae3e6bd886328b1960f4998e65d58f2c4
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  SwiftHEXColors: c5baa53cf2412ce6391633ce74999437cc025efc
+  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+
+PODFILE CHECKSUM: 247bcbe15d49b7ff3b89d876caddf24717c2786b
+
+COCOAPODS: 1.9.1

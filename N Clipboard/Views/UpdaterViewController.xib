@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UpdaterViewController" customModule="N_Clipboard" customModuleProvider="target">
+            <connections>
+                <outlet property="appIcon" destination="cZ6-1P-SAp" id="pGq-kQ-RfF"/>
+                <outlet property="downloadOrCancelBtn" destination="3WQ-Sd-4Wk" id="krv-vp-VMD"/>
+                <outlet property="version" destination="Vtl-Lc-OVF" id="KMk-He-KIT"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="webView" destination="5xy-n1-aIV" id="1qD-im-67H"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="540" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-1P-SAp">
+                    <rect key="frame" x="22" y="226" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="E9B-Cf-Mby"/>
+                        <constraint firstAttribute="height" constant="64" id="sBP-dc-eLt"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="empty" id="9yF-4b-tYg"/>
+                </imageView>
+                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xy-n1-aIV">
+                    <rect key="frame" x="94" y="66" width="424" height="198"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="198" id="4cm-9m-Opo"/>
+                    </constraints>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vtl-Lc-OVF">
+                    <rect key="frame" x="94" y="273" width="150" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="New Version Available" id="qOU-e8-b2v">
+                        <font key="font" metaFont="systemMedium" size="14"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3WQ-Sd-4Wk">
+                    <rect key="frame" x="378" y="13" width="148" height="32"/>
+                    <buttonCell key="cell" type="push" title="Download Upadte" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L4V-oo-XZh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="label" size="13"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="download:" target="-2" id="sig-s8-qvI"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-T1-5wJ">
+                    <rect key="frame" x="251" y="13" width="127" height="32"/>
+                    <buttonCell key="cell" type="push" title="Not Interested" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UFS-S4-93v">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="label" size="13"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="close:" target="-2" id="gvz-E4-e7C"/>
+                        <binding destination="-2" name="hidden2" keyPath="updateDMGExisted" previousBinding="spg-lo-mHG" id="gmN-9F-0yE">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden" keyPath="isDownloading" id="spg-lo-mHG"/>
+                    </connections>
+                </button>
+                <progressIndicator wantsLayer="YES" maxValue="100" doubleValue="50" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="1VP-Ss-O36">
+                    <rect key="frame" x="96" y="39" width="424" height="20"/>
+                    <connections>
+                        <binding destination="-2" name="animate" keyPath="isDownloading" id="VEv-Am-6vH"/>
+                        <binding destination="-2" name="isIndeterminate" keyPath="hasDownloadStart" previousBinding="VEv-Am-6vH" id="wAK-gm-eoG">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="value" keyPath="percentage" id="hRf-Tw-W0l"/>
+                    </connections>
+                </progressIndicator>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cZ6-1P-SAp" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="22" id="AxW-0q-PxF"/>
+                <constraint firstAttribute="trailing" secondItem="3WQ-Sd-4Wk" secondAttribute="trailing" constant="20" symbolic="YES" id="B41-q2-cs8"/>
+                <constraint firstAttribute="bottom" secondItem="Jhf-T1-5wJ" secondAttribute="bottom" constant="20" symbolic="YES" id="FfX-F2-hrC"/>
+                <constraint firstAttribute="trailing" secondItem="1VP-Ss-O36" secondAttribute="trailing" constant="20" symbolic="YES" id="HIP-g9-0Ni"/>
+                <constraint firstItem="1VP-Ss-O36" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="96" id="Lag-Uo-OvS"/>
+                <constraint firstItem="5xy-n1-aIV" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="48" id="OcG-F7-6rj"/>
+                <constraint firstAttribute="bottom" secondItem="3WQ-Sd-4Wk" secondAttribute="bottom" constant="20" symbolic="YES" id="Tuf-2a-ucQ"/>
+                <constraint firstItem="Vtl-Lc-OVF" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="22" id="UlR-Sa-U6F"/>
+                <constraint firstItem="5xy-n1-aIV" firstAttribute="leading" secondItem="cZ6-1P-SAp" secondAttribute="trailing" constant="8" symbolic="YES" id="Zfh-Fv-yTq"/>
+                <constraint firstItem="1VP-Ss-O36" firstAttribute="top" secondItem="5xy-n1-aIV" secondAttribute="bottom" constant="8" id="ewX-As-sy7"/>
+                <constraint firstItem="3WQ-Sd-4Wk" firstAttribute="leading" secondItem="Jhf-T1-5wJ" secondAttribute="trailing" constant="12" symbolic="YES" id="frx-9Q-bnr"/>
+                <constraint firstItem="cZ6-1P-SAp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="22" id="iwV-1a-lZS"/>
+                <constraint firstItem="Vtl-Lc-OVF" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="96" id="ntL-sF-8lw"/>
+                <constraint firstAttribute="trailing" secondItem="5xy-n1-aIV" secondAttribute="trailing" constant="22" id="p5Z-sS-Lhy"/>
+            </constraints>
+            <point key="canvasLocation" x="221" y="224"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="empty" width="100" height="100"/>
+    </resources>
+</document>

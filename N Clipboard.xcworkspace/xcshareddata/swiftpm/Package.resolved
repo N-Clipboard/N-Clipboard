@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BlobStorage",
+        "repositoryURL": "https://github.com/N-Clipboard/BlobStorage.git",
+        "state": {
+          "branch": "master",
+          "revision": "e8a12f91e487a8c44bde0ffe759adf76416cb09c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

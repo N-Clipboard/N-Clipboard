@@ -1,0 +1,26 @@
+{
+    "title": "N Clip Board",
+    "icon": "./assets_source/icon.icns",
+    "icon-size": 128,
+    "background": "./assets_source/bg.png",
+    "window": {
+        "size": {
+            "width": 640,
+            "height": 360
+        }
+    },
+    "contents": [
+        {
+            "x": 448,
+            "y": 180,
+            "type": "link",
+            "path": "/Applications"
+        },
+        {
+            "x": 184,
+            "y": 180,
+            "type": "file",
+            "path": "build/archives.xcarchive/Products/Applications/N Clipboard.app"
+        }
+    ]
+}
